@@ -41,8 +41,6 @@ trait Statistics {
    * for the whole specification
    */
   case class SpecsStatistics(fragments: Seq[ExecutedFragment] = ArrayBuffer()) {
-    private implicit val statsMonoid = Stats.StatsMonoid
-    
     /** @return the list of all current stats, with the total on each line */
     lazy val totals: Seq[Stats] = {
       import NestedBlocks._
